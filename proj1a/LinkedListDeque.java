@@ -45,7 +45,7 @@ public class LinkedListDeque<T> {
     public boolean isEmpty() {
         if(size == 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -55,17 +55,16 @@ public class LinkedListDeque<T> {
     public void printDeque() {
         TNode pointer = sentinel;
         int cnt;
-        for(cnt = 0; cnt < size; cnt++){
+        for(cnt = 0; cnt < size; cnt++) {
             pointer = pointer.next;
             System.out.print(pointer.value + " ");
-
         }
     }
 
     public T removeFirst() {
-        if(size == 0){
+        if(size == 0) {
             return null;
-        }else{
+        } else {
             sentinel.next = sentinel.next.next;
             sentinel = sentinel.next.prev;
             size -= 1;
