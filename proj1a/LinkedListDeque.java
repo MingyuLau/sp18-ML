@@ -43,26 +43,28 @@ public class LinkedListDeque<T> {
     }
 
     public boolean isEmpty() {
-        if(size == 0) {
+        if (size == 0) {
             return true;
         } else {
             return false;
         }
     }
 
-    public int size() {return size;}
+    public int size() {
+        return size;
+    }
 
     public void printDeque() {
         TNode pointer = sentinel;
         int cnt;
-        for(cnt = 0; cnt < size; cnt++) {
+        for (cnt = 0; cnt < size; cnt++) {
             pointer = pointer.next;
             System.out.print(pointer.value + " ");
         }
     }
 
     public T removeFirst() {
-        if(size == 0) {
+        if (size == 0) {
             return null;
         } else {
             sentinel.next = sentinel.next.next;
