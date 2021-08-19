@@ -5,7 +5,7 @@
  * its back).
  */
 public class LinkedListDeque<T> {
-    private class TNode{
+    private class TNode {
         private TNode prev;
         private T value;
         private TNode next;
@@ -30,7 +30,7 @@ public class LinkedListDeque<T> {
     }
 
     public void addFirst(T item) {
-        TNode newNode = new TNode(sentinel,item,sentinel.next);
+        TNode newNode = new TNode(sentinel, item, sentinel.next);
         sentinel.next.prev = newNode;
         sentinel.next = newNode;
         size += 1;
