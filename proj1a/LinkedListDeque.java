@@ -76,6 +76,21 @@ public class LinkedListDeque<T> {
     }
 
     /**
+     * Removes and returns the item at the back of the deque. If no such item
+     * exists, returns null.
+     */
+    public T removeLast() {
+        if (isEmpty()) {
+            return null;
+        }
+        T res = sentinel.prev.value;
+        sentinel.prev = sentinel.prev.prev;
+        sentinel.prev.next = sentinel;
+        size--;
+        return res;
+    }
+
+    /**
      * Gets the item at the given index, where 0 is the front, 1 is the next item,
      * and so forth. If no such item exists, returns null. Must not alter the deque!
      */
