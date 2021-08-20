@@ -69,6 +69,32 @@ public class LinkedListDeque<T> {
             return sentinel.next.value;
         }
     }
+    /*Gets the item at the given index*/
+    public T get(int index) {
+        TNode pointer = sentinel;
+        int cnt = 0;
+        if (index >= size) {
+            return null;
+        } else {
+            for (cnt = 0; cnt <= index; cnt++) {
+                pointer = pointer.next;
+            }
+            return pointer.value;
+        }
+    }
 
+    /*Same as get, but uses recursion*/
+    public T getRecursive(int index) {
+        if (index >= size) {
+            return null;
+        }
+        return getRecursive(sentinel.next, index);
+    }
+
+    private T getRecursive(LinkedListDeque<T>.TNode node,int i) {
+        if (i == 0) {
+            return node.value;
+        }
+        return getRecursive(node.next, i-1);
+    }
 }
-
